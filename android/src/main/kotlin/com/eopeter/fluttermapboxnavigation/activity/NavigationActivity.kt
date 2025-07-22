@@ -6,11 +6,10 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.location.Location
 
-import androidx.core.content.ContextCompat
-import androidx.core.content.ContextCompat.RECEIVER_NOT_EXPORTED
-
 import org.json.JSONObject
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.RECEIVER_NOT_EXPORTED
 import com.eopeter.fluttermapboxnavigation.FlutterMapboxNavigationPlugin
 import com.eopeter.fluttermapboxnavigation.R
 import com.eopeter.fluttermapboxnavigation.databinding.NavigationActivityBinding
@@ -148,14 +147,14 @@ class NavigationActivity : AppCompatActivity() {
             }
         }
 
-        registerReceiver(
+        ContextCompat.registerReceiver(
             this,
             finishBroadcastReceiver,
             IntentFilter(NavigationLauncher.KEY_STOP_NAVIGATION),
             RECEIVER_NOT_EXPORTED
         )
 
-        registerReceiver(
+        ContextCompat.registerReceiver(
             this,
             addWayPointsBroadcastReceiver,
             IntentFilter(NavigationLauncher.KEY_ADD_WAYPOINTS),
