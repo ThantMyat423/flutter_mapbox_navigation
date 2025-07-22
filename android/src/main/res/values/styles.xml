@@ -1,9 +1,6 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="Theme_AppCompat_NoActionBar" parent="Theme.AppCompat.NoActionBar">
-        <item name="windowNoTitle">true</item>
-        <item name="android:windowNoTitle">true</item>
-        <!-- Customize your theme here. -->
+    <style name="AppTheme_NoActionBar" parent="Theme.AppCompat.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
