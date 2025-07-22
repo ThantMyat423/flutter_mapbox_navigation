@@ -5,7 +5,8 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.location.Location
-import android.os.Bundle
+import android.os.Bundleimport androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.RECEIVER_NOT_EXPORTED
 
 import org.json.JSONObject
 import androidx.appcompat.app.AppCompatActivity
@@ -147,13 +148,17 @@ class NavigationActivity : AppCompatActivity() {
         }
 
         registerReceiver(
+            this,
             finishBroadcastReceiver,
-            IntentFilter(NavigationLauncher.KEY_STOP_NAVIGATION)
+            IntentFilter(NavigationLauncher.KEY_STOP_NAVIGATION),
+            RECEIVER_NOT_EXPORTED
         )
 
         registerReceiver(
+            this,
             addWayPointsBroadcastReceiver,
-            IntentFilter(NavigationLauncher.KEY_ADD_WAYPOINTS)
+            IntentFilter(NavigationLauncher.KEY_ADD_WAYPOINTS),
+            RECEIVER_NOT_EXPORTED
         )
 
         // TODO set the style Uri
